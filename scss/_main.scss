@@ -1,0 +1,490 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: $font;
+}
+
+// hero section 
+.hero {
+    background-image: url(../img/hero-banner.jpg);
+    height: 105vh;
+    background-size: cover;
+
+    @include res {
+        height: auto;
+        background-size: 100% 100%;
+    }
+
+    header {
+        padding: 25px;
+
+        @include res {
+            background: $w;
+            color: $black;
+        }
+
+        @include f;
+
+        .logo {
+            font-family: $font1;
+            font-size: 38px;
+            color: $w;
+
+            @include res {
+                font-size: 25px;
+                order: 2;
+                flex-grow: 1;
+                color: $black;
+            }
+        }
+
+        nav {
+            @include res {
+                order: 1;
+                margin-left: 0;
+                flex-grow: 1;
+            }
+
+            margin-right: auto;
+            padding-left: 30px;
+
+            span {
+                font-size: 44px;
+                display: none;
+
+                @include res {
+                    display: block
+                }
+            }
+
+            ul {
+                @include f;
+                gap: 20px;
+
+                a {
+                    color: $w;
+                    font-size: 17px;
+                    font-weight: 700;
+                }
+
+                @include res {
+                    display: none;
+                    flex-grow: 1;
+                }
+            }
+        }
+
+        .icons {
+            @include res {
+                order: 3;
+                flex-grow: 1;
+            }
+
+            a {
+                color: $w;
+                margin-left: 10px;
+                font-size: 22px;
+
+                @include res {
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    &-content {
+        padding: 2rem;
+        text-align: center;
+        max-width: 40%;
+        color: $w;
+
+        @include res {
+            margin: auto;
+            max-width: 70%;
+        }
+
+        h1 {
+            font-family: $font1;
+            font-size: 55px;
+
+        }
+
+        h2 {
+            @include res {
+                font-size: 60px;
+            }
+
+            font-family: $font2;
+            font-size: 130px;
+        }
+
+    }
+}
+
+.btn {
+    background-color: $black;
+    color: $w;
+    border-radius: 50px;
+    padding: 10px 30px;
+    margin-top: 50px;
+    display: inline-block;
+
+    &:hover {
+        background: $pink;
+    }
+}
+
+.btn1 {
+    background-color: $pink;
+    color: $w;
+    border-radius: 50px;
+    padding: 10px 30px;
+    margin-top: 50px;
+    display: inline-block;
+
+    &:hover {
+        background: $black;
+    }
+
+}
+
+.con {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.py-3 {
+    padding: 30px 0;
+}
+
+.title {
+    font-weight: 70px;
+    font-size: 33px;
+    text-align: center;
+    padding-bottom: 30px;
+
+    span {
+        color: $brand;
+    }
+}
+
+.w-100 {
+    max-width: 100%;
+}
+
+.flex {
+    @include f;
+    flex-wrap: wrap;
+}
+
+// category section 
+.category {
+
+    .box {
+        flex-basis: 18%;
+        height: 222px;
+        overflow: hidden;
+
+        img {
+            transition: 0.09s;
+        }
+
+        &:hover {
+            img {
+                transform: scale(01.1);
+            }
+        }
+
+        a {
+            color: $black;
+
+            &:hover {
+                color: $pink;
+            }
+        }
+    }
+}
+
+// featured section 
+.featured {
+    .box {
+        width: 30%;
+        position: relative;
+
+        &-content {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    }
+}
+
+// Js navigation
+.aa {
+    background: $w;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    a {
+        color: $black !important;
+
+        &:hover {
+            color: $pink !important;
+        }
+    }
+
+    h1 {
+        color: $black !important;
+    }
+}
+
+.bestSeller {
+    margin-bottom: 40px;
+
+    .in {
+        @include res1 {
+            @include f;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            img 
+            {
+
+                border: 1px solid rgb(215, 215, 215);
+                border-radius: 5px;
+            }
+            margin: 15px;
+            gap: 10px;
+
+            .sell {
+                text-align: center;
+                padding: 25px;
+
+                a {
+                    color: $black;
+
+                    &:hover {
+                        color: $pink;
+                    }
+                }
+
+                p {
+                    color: $pink;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.service {
+    margin: 20px 0;
+
+    .incIcon {
+        @include res1 {
+            @include f;
+        }
+
+        .servIcon {
+            padding: 32px;
+            .title1{
+                font-weight: 70px;
+                font-size: 33px;
+                text-align: center;
+            }
+            .disc {
+                text-align: center;
+                h4 
+                {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                p 
+                {
+                    color: rgb(161, 160, 160);
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+}
+
+.guarentee {
+    background-image: url(http://sangalotech.com/html/15/assets/images/cta-bg.jpg);
+    height: 500px;
+    background-size: cover;
+    background-position: 75%;
+    margin: 15px 0;
+
+    @include res {
+        height: 440px;
+    }
+
+    .content {
+        @include f;
+
+        @include res {
+            .cta {
+                display: none;
+            }
+
+            .tg {
+                width: 110px;
+                margin: 10px 0;
+            }
+
+            padding: 10px;
+            margin-top: 15px;
+
+        }
+
+        .ttl {
+            text-align: left;
+
+            @include res {
+                margin-top: 30px;
+            }
+
+            .typo {
+                margin-bottom: 20px;
+
+                h2 {
+                    font-size: 32px;
+                }
+            }
+
+            .text {
+                margin-block-end: 30px;
+            }
+        }
+    }
+}
+
+.popular {
+    margin: 15px 0;
+
+}
+
+.footer {
+    background-image: url(../img/footer-bg.jpg);
+    height: 500px;
+    background-size: cover;
+
+    @include res {
+        background-size: cover;
+        height: 180vh;
+        
+    }
+
+    footer {
+        @include f;
+        padding: 110px 10px 40px;
+
+        @include res {
+            display: block;
+        }
+
+        .logo {
+            font-family: $font1;
+            font-size: 38px;
+            color: $w;
+            margin-bottom: 10px;
+        }
+
+        .footNav {
+            p {
+                color: $w;
+
+                a {
+                    display: block;
+                    color: $pink;
+                }
+            }
+
+            h1,
+            a {
+                color: $w;
+
+            }
+
+            .sosIcon {
+                ul {
+                    li {
+                        display: inline-block;
+                        padding: 5px;
+
+
+                        a {
+                            display: block;
+                            background: $w;
+                            padding: 15px;
+                            border-radius: 50px;
+                            color: $black;
+
+                            &:hover {
+                                background: $pink;
+                                color: $w;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footNav1 {
+            h2 {
+                color: $w;
+                margin-bottom: 10px;
+            }
+
+            ul {
+                li {
+                    line-height: 30px;
+
+                    a {
+                        color: rgb(161, 160, 160);
+
+                        &:hover {
+                            color: $pink;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .hr {
+        color: rgb(161, 160, 160);
+    }
+
+    .lfoot {
+        @include f;
+        padding: 15px;
+
+        @include res {
+            display: block;
+        }
+
+        p,
+        a {
+            color: rgb(161, 160, 160);
+        }
+    }
+}

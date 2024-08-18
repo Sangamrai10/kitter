@@ -1,0 +1,10 @@
+$(window).scroll(function(){
+    if($(this).scrollTop()>250)
+    {
+        $("header").addClass("aa")
+    }
+    else
+    {
+        $("header").removeClass("aa")
+    }
+})
